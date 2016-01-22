@@ -1,5 +1,5 @@
 package magic;
-//Dopisac ograniczenia do powtarzania się liczb w talii
+
 import java.util.Scanner;
 
 public class Magic {
