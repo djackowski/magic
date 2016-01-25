@@ -1,5 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Vector;
 
 public class Magic {
     static int chosenOne;
@@ -9,7 +10,7 @@ public class Magic {
         int chosenRow;
         countNumbersInRow = 0;
 
-        Vector<Integer> vector = new Vector<>();
+        List<Integer> rowList = new ArrayList<>();
         Integer number;
         Scanner getNumber = new Scanner(System.in);
         chosenRow = getNumber.nextInt() - 1;
@@ -17,14 +18,14 @@ public class Magic {
         for (int i = 0; i < 16; i++) {
             number = getNumber.nextInt();
             if (i >= (chosenRow * 4) && i <= (chosenRow * 4) + 3)
-                vector.add(number);
+                rowList.add(number);
         }
         chosenRow = getNumber.nextInt() - 1;
         //Drugie rozdanie kart
         for (int i = 0; i < 16; i++) {
             number = getNumber.nextInt();
             if (i >= (chosenRow * 4) && i <= (chosenRow * 4) + 3) {
-                if (vector.contains(number)) {
+                if (rowList.contains(number)) {
                     countNumbersInRow++;
                     if (countNumbersInRow == 1)
                         chosenOne = number;
